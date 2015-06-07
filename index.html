@@ -29,9 +29,9 @@
 
 	<!-- Header -->
 	<section id="header" class="dark">
-		<header>
+		<header id="title">
 			<h1>Sergio Gutierrez</h1>
-			<p>Software Engineer, Data Visualization and Dreamer</a>
+			<p>Software and Data Visualization Engineer. Dreamer</a>
 			</p>
 		</header>
 		<footer>
@@ -415,7 +415,16 @@
 			</ul>
 		</div>
 	</section>
-
+	<script>
+		$(window).on('scroll', function() {
+			var scrollspeed = -$(window).scrollTop() / 3;
+			if ($("#header>footer").position().top > ($('#title').position().top + $('#title').height())) {
+				if($(window).scrollTop() < $("#header>footer").position().top){
+					$('#title').css('transform', 'translateY(' + scrollspeed + 'px)');
+				}
+			}
+		})
+	</script>
 </body>
 
 </html>
